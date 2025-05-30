@@ -1,3 +1,5 @@
+const mongoose = require("mongoose");
+
 const orderSchema = new mongoose.Schema(
   {
     customerId: {
@@ -26,4 +28,5 @@ const orderSchema = new mongoose.Schema(
 
 orderSchema.index({ customerId: 1 });
 orderSchema.index({ orderDate: -1 });
-export default mongoose.model("Order", orderSchema);
+const Order = mongoose.model("Order", orderSchema);
+module.exports = Order;

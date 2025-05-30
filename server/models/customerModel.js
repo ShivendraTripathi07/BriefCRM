@@ -1,3 +1,5 @@
+const mongoose = require("mongoose");
+
 const customerSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
@@ -19,4 +21,5 @@ const customerSchema = new mongoose.Schema(
 
 customerSchema.index({ email: 1 });
 customerSchema.index({ segment: 1 });
-export default mongoose.model("Customer", customerSchema);
+const Customer = mongoose.model("Customer", customerSchema);
+module.exports = Customer;

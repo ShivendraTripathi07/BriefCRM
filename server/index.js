@@ -7,7 +7,7 @@ const cookieParser = require("cookie-parser");
 const { default: mongoose } = require("mongoose");
 
 const userRoutes = require("./routes/userRoutes");
-
+const customerRoute = require("./routes/customerRoute");
 const app = express();
 app.use(express.json({ limit: "20mb" }));
 app.use(express.urlencoded({ limit: "20mb", extended: true }));
@@ -26,7 +26,7 @@ app.use(
 
 // Routes
 app.use("/user", userRoutes);
-
+app.use("/customer", customerRoute);
 // Connnection
 
 const connectDB = async () => {
