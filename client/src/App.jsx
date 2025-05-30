@@ -1,11 +1,17 @@
+import { Outlet } from "react-router-dom";
 import "./App.css";
+import { ToastContainer } from "react-toastify";
 import React from "react";
-function App() {
+
+const App = () => {
   return (
     <>
-      <div className=" text-red-50">Hello</div>
+      <ToastContainer position="top-right" />
+      <main className="mt-0 overflow-y-hidden">
+        <Outlet />
+      </main>
     </>
   );
-}
+};
 
 export default App;
