@@ -1,3 +1,4 @@
+const { default: mongoose } = require("mongoose");
 const segmentSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
@@ -27,4 +28,5 @@ const segmentSchema = new mongoose.Schema(
 );
 
 segmentSchema.index({ createdBy: 1 });
-export default mongoose.model("Segment", segmentSchema);
+const Segment = mongoose.model("Segment", segmentSchema);
+module.exports = Segment;

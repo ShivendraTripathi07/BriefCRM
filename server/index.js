@@ -8,7 +8,10 @@ const { default: mongoose } = require("mongoose");
 
 const userRoutes = require("./routes/userRoutes");
 const customerRoute = require("./routes/customerRoute");
+const orderRoute = require("./routes/orderRoutes");
+const campaignRoute = require("./routes/campaignRoutes");
 const app = express();
+// app.use(express.json());
 app.use(express.json({ limit: "20mb" }));
 app.use(express.urlencoded({ limit: "20mb", extended: true }));
 
@@ -27,6 +30,8 @@ app.use(
 // Routes
 app.use("/user", userRoutes);
 app.use("/customer", customerRoute);
+app.use("/order", orderRoute);
+app.use("/campaign", campaignRoute);
 // Connnection
 
 const connectDB = async () => {

@@ -1,3 +1,5 @@
+const mongoose = require("mongoose");
+
 const aiInteractionSchema = new mongoose.Schema(
   {
     userId: {
@@ -20,4 +22,5 @@ const aiInteractionSchema = new mongoose.Schema(
 );
 
 aiInteractionSchema.index({ userId: 1 });
-export default mongoose.model("AIInteraction", aiInteractionSchema);
+const AIInteraction = mongoose.model("AIInteraction", aiInteractionSchema);
+module.exports = AIInteraction;

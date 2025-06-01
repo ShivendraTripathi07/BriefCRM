@@ -30,3 +30,4 @@ orderSchema.index({ customerId: 1 });
 orderSchema.index({ orderDate: -1 });
 const Order = mongoose.model("Order", orderSchema);
 module.exports = Order;
+  

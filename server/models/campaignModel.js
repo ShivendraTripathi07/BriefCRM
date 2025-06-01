@@ -1,3 +1,5 @@
+const { default: mongoose } = require("mongoose");
+
 const campaignSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
@@ -37,4 +39,5 @@ const campaignSchema = new mongoose.Schema(
 
 campaignSchema.index({ scheduledAt: 1 });
 campaignSchema.index({ segmentId: 1 });
-export default mongoose.model("Campaign", campaignSchema);
+const Campaign = mongoose.model("Campaign", campaignSchema);
+module.exports = Campaign;
